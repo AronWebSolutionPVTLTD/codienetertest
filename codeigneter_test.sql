@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jul 12, 2022 at 01:01 PM
+-- Generation Time: Jul 13, 2022 at 01:07 PM
 -- Server version: 10.4.22-MariaDB
 -- PHP Version: 7.4.28
 
@@ -29,9 +29,9 @@ SET time_zone = "+00:00";
 
 CREATE TABLE `cart` (
   `id` int(255) NOT NULL,
-  `user_id` varchar(255) NOT NULL,
-  `product_id` varchar(255) NOT NULL,
-  `quantity` varchar(255) NOT NULL,
+  `user_id` int(255) NOT NULL,
+  `product_id` int(255) NOT NULL,
+  `quantity` int(255) NOT NULL,
   `updated_at` datetime NOT NULL,
   `created_at` datetime NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
@@ -41,7 +41,7 @@ CREATE TABLE `cart` (
 --
 
 INSERT INTO `cart` (`id`, `user_id`, `product_id`, `quantity`, `updated_at`, `created_at`) VALUES
-(1, '1', '1', '5', '2022-07-12 12:52:08', '2022-07-12 12:52:08');
+(1, 1, 1, 5, '2022-07-12 12:52:08', '2022-07-12 12:52:08');
 
 -- --------------------------------------------------------
 
@@ -54,8 +54,7 @@ CREATE TABLE `products` (
   `title` varchar(255) NOT NULL,
   `description` longtext NOT NULL,
   `image` varchar(255) NOT NULL,
-  `quantity` varchar(255) NOT NULL,
-  `price` varchar(255) NOT NULL,
+  `price` int(255) NOT NULL,
   `status` varchar(255) NOT NULL,
   `updated_at` datetime NOT NULL,
   `created_at` datetime NOT NULL
@@ -65,11 +64,11 @@ CREATE TABLE `products` (
 -- Dumping data for table `products`
 --
 
-INSERT INTO `products` (`id`, `title`, `description`, `image`, `quantity`, `price`, `status`, `updated_at`, `created_at`) VALUES
-(1, 'iPhone XXX', 'Iphone XXX\r\nRam 12Gb\r\nStorage 256Gb\r\nCamera 12px', '', '1000', '1000', '1', '2022-07-12 16:09:31', '2022-07-12 16:09:31'),
-(2, 'prod1', 'Product 1', '', '1000', '100', '1', '2022-07-12 16:09:31', '2022-07-12 16:09:31'),
-(3, 'prod2', 'Product 2', '', '2000', '200', '1', '2022-07-12 16:09:31', '2022-07-12 16:09:31'),
-(4, 'prod3', 'Product 3', '', '1000', '300', '0', '2022-07-12 16:09:31', '2022-07-12 16:09:31');
+INSERT INTO `products` (`id`, `title`, `description`, `image`, `price`, `status`, `updated_at`, `created_at`) VALUES
+(1, 'iPhone XXX', 'Iphone XXX\r\nRam 12Gb\r\nStorage 256Gb\r\nCamera 12px', '', 1000, '1', '2022-07-12 16:09:31', '2022-07-12 16:09:31'),
+(2, 'prod1', 'Product 1', '', 100, '1', '2022-07-12 16:09:31', '2022-07-12 16:09:31'),
+(3, 'prod2', 'Product 2', '', 200, '1', '2022-07-12 16:09:31', '2022-07-12 16:09:31'),
+(4, 'prod3', 'Product 3', '', 300, '0', '2022-07-12 16:09:31', '2022-07-12 16:09:31');
 
 -- --------------------------------------------------------
 
