@@ -5,3 +5,5 @@ You need to import the database file in your database
 Database name = "codeigneter_test"
 Database username = "root"
 Database password = ""
+
+Also hit this url for results http://localhost/CodeIgniter/index.php/data
